@@ -1,0 +1,10 @@
+{
+  "collectCoverageFrom": ["src/**/*"],
+  "coverageReporters": ["json-summary", "lcov", "html"],
+  "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
+  "testEnvironment": "node",
+  "testMatch": [
+    "<rootDir>/src/**/__tests__/**/*.js?(x)",
+    "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+  ]
+}

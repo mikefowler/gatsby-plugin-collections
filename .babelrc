@@ -1,0 +1,7 @@
+{
+  "presets": [["airbnb", {
+    "targets": {
+      "node": "8.9.3"
+    }
+  }]]
+}
