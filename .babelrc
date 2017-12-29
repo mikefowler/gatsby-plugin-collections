@@ -3,5 +3,8 @@
     "targets": {
       "node": "8.9.3"
     }
-  }]]
+  }]],
+  "plugins": [
+    "babel-plugin-add-module-exports"
+  ]
 }
