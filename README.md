@@ -15,17 +15,16 @@ Let's say you define a `posts` collection. You specify that the source files are
 This tutorial will bring you through the process of creating a "posts" collection.
 
 1. You'll need a few dependencies. If you've already started a Gatsby site, you may already have a couple of these.
-
     ```
     yarn add gatsby-source-filesystem gatsby-paginate gatsby-plugin-collections
 
     // OR
 
     npm install gatsby-source-filesystem gatsby-paginate gatsby-plugin-collections
-  ```
+    ```
 
 1. In `gatsby-config.js`, add a configuration block specifying that nodes should be sourced from `src/posts`:
-
+    
     ```js
     {
       resolve: 'gatsby-source-filesystem',
@@ -37,23 +36,22 @@ This tutorial will bring you through the process of creating a "posts" collectio
     ```
 
 1. Now add a configuration block defining our “posts” collection:
-
     ```js
     {
-      resolve: 'gatsby-plugin-collections',
-      options: {
-        collections: [{
-          name: 'posts',
-          path: `${__dirname}/src/posts`,
-          permalink: '/journal/:year/:month/:day/:title',
-          template: `${__dirname}/src/templates/journal-entry.js`,
-          paginate: {
-            perPage: 10,
-            prefix: 'journal',
-            template: `${__dirname}/src/templates/journal.js`,
-          },
-        }],
-      },
+    resolve: 'gatsby-plugin-collections',
+    options: {
+      collections: [{
+        name: 'posts',
+        path: `${__dirname}/src/posts`,
+        permalink: '/journal/:year/:month/:day/:title',
+        template: `${__dirname}/src/templates/journal-entry.js`,
+        paginate: {
+          perPage: 10,
+          prefix: 'journal',
+          template: `${__dirname}/src/templates/journal.js`,
+        },
+      }],
+    },
     }
     ```
 
@@ -70,7 +68,25 @@ Each collection accepts the following configuration options:
 - _`paginate (Object)`_: defines pagination options. If an object is provided, it will be assumed that you want your collection paginated.
     - _`perPage (Number)`_: the number of items to be displayed on each paginated page
     - _`template (string) [required]`_: a path to the React component that will be used to render the pagination pages.
-    - `prefix` (string): an optional string to append before the paginated page URLs. You will want to use this if you are paginating multiple collections. A value of "journal" will result in paginated URLs such as `/journal`, `/journal/2`, `/journal/3`, etc.
+    - _`prefix` (string)_: an optional string to append before the paginated page URLs. You will want to use this if you are paginating multiple collections. A value of "journal" will result in paginated URLs such as `/journal`, `/journal/2`, `/journal/3`, etc.
+
+## Permalinks
+
+Permalinks in _Gatsby Collections_ function much the same as in [Jekyll](https://jekyllrb.com/docs/permalinks/). When you specify a permalink for your collection, you are specifying a _template_ that will be used to build your URLs. One example of a permalink template is `/:year/:month/:day/:title`.
+
+Setting the permalink in your node's front matter will override the setting specified by your collection:
+
+```md
+---
+title: Hello, world!
+permalink: /hello
+```
+
+In addition to specifying your own template string using the [available template variables](https://jekyllrb.com/docs/permalinks/#template-variables), you can specify several presets by name:
+
+- `pretty`: `/:categories/:year/:month/:day/:title`
+- `ordinal`: `/:categories/:year/:y_day/:title`
+- `none`: `/:categories/:title`
 
 ## Templates
 
