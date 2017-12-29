@@ -34,6 +34,19 @@ This tutorial will bring you through the process of creating a "posts" collectio
       },
     }
     ```
+    
+1. If you haven't already, configure `gatsby-plugin-remark`:
+    
+    ```js
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          // ...
+        ],
+      },
+    },
+    ```
 
 1. Now add a configuration block defining our “posts” collection:
     ```js
