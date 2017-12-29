@@ -80,6 +80,7 @@ Setting the permalink in your node's front matter will override the setting spec
 ---
 title: Hello, world!
 permalink: /hello
+---
 ```
 
 In addition to specifying your own template string using the [available template variables](https://jekyllrb.com/docs/permalinks/#template-variables), you can specify several presets by name:
