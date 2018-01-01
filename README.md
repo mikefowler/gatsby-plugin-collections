@@ -24,7 +24,7 @@ This tutorial will bring you through the process of creating a "posts" collectio
     ```
 
 1. In `gatsby-config.js`, add a configuration block specifying that nodes should be sourced from `src/posts`:
-    
+
     ```js
     {
       resolve: 'gatsby-source-filesystem',
@@ -51,20 +51,20 @@ This tutorial will bring you through the process of creating a "posts" collectio
 1. Now add a configuration block defining our “posts” collection:
     ```js
     {
-    resolve: 'gatsby-plugin-collections',
-    options: {
-      collections: [{
-        name: 'posts',
-        path: `${__dirname}/src/posts`,
-        permalink: '/journal/:year/:month/:day/:title',
-        template: `${__dirname}/src/templates/journal-entry.js`,
-        paginate: {
-          perPage: 10,
-          prefix: 'journal',
-          template: `${__dirname}/src/templates/journal.js`,
-        },
-      }],
-    },
+      resolve: 'gatsby-plugin-collections',
+      options: {
+        collections: [{
+          name: 'posts',
+          folder: 'src/posts',
+          permalink: '/journal/:year/:month/:day/:title',
+          template: 'journal-entry',
+          paginate: {
+            perPage: 10,
+            prefix: 'journal',
+            template: 'journal',
+          },
+        }],
+      },
     }
     ```
 
@@ -75,12 +75,12 @@ This tutorial will bring you through the process of creating a "posts" collectio
 Each collection accepts the following configuration options:
 
 - _`name (string)`_: the name of the collection
-- _`path (string) [required]`_: a path containing your collection's source files
+- _`folder (string) [required]`_: a relative path containing your collection's source files
 - _`permalink (string)`_: the template string for the collection's output URLs
-- _`template (string)`_: a path to the React component each collection item should use to render
+- _`template (string)`_: a relative path to the React component each collection item should use to render
 - _`paginate (Object)`_: defines pagination options. If an object is provided, it will be assumed that you want your collection paginated.
     - _`perPage (Number)`_: the number of items to be displayed on each paginated page
-    - _`template (string) [required]`_: a path to the React component that will be used to render the pagination pages.
+    - _`template (string) [required]`_: a relative path to the React component that will be used to render the pagination pages.
     - _`prefix` (string)_: an optional string to append before the paginated page URLs. You will want to use this if you are paginating multiple collections. A value of "journal" will result in paginated URLs such as `/journal`, `/journal/2`, `/journal/3`, etc.
 
 ## Permalinks
