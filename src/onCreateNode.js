@@ -1,16 +1,13 @@
 import { DateTime } from 'luxon';
+import path from 'path';
 
 import getPermalink from './getPermalink';
 import getDateAndSlug from './getDateAndSlug';
 import getPermalinkPlaceholders from './getPermalinkPlaceholders';
-
-// Define a handful of built-in permalinks. The full set of placeholder values
-// are found below, in the definition of the placeholders object.
-const PERMALINK_PRESETS = new Map(Object.entries({
-  pretty: '/:categories/:year/:month/:year/:title',
-  ordinal: '/:categories/:year/:y_day/:title',
-  none: '/:categories/:title',
-}));
+import {
+  PERMALINK_PRESETS,
+  ROOT_PATH,
+} from './constants';
 
 export default async function onCreateNode({
   node,
@@ -22,7 +19,11 @@ export default async function onCreateNode({
   if (node.internal.type !== 'MarkdownRemark') return;
 
   // Only process files that belong to a defined collection
-  const collection = collections.find(c => node.fileAbsolutePath.includes(c.path));
+  const collection = collections.find((c) => {
+    const collectionPath = path.resolve(ROOT_PATH, c.folder);
+    return node.fileAbsolutePath.includes(collectionPath);
+  });
+
   if (!collection) return;
 
   // The permalink template is set by the collection's `permalink`
