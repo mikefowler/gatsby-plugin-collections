@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-collections",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Creates Gatsby pages from flat folders of Markdown files, with support for pagination and customizable permalinks",
   "main": "index.js",
   "engines": {
@@ -25,7 +25,6 @@
   "license": "MIT",
   "dependencies": {
     "gatsby-paginate": "^1.0.9",
-    "gatsby-plugin-collections": "https://github.com/mikefowler/gatsby-plugin-collections",
     "luxon": "^0.2.11",
     "slug": "^0.9.1"
   },
