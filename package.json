@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-collections",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Creates Gatsby pages from flat folders of Markdown files, with support for pagination and customizable permalinks",
   "main": "index.js",
   "engines": {
@@ -20,6 +20,14 @@
   "keywords": [
     "gatsby",
     "gatsby-plugin"
+  ],
+  "files": [
+    "lib",
+    "index.js",
+    "gatsby-node.js",
+    "README.md",
+    "LICENSE",
+    "package.json"
   ],
   "author": "Mike Fowler <mike@mikefowler.me>",
   "license": "MIT",
