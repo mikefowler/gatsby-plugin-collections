@@ -42,9 +42,13 @@ export default async function onCreateNode({
   // Create a Luxon date object so we can easily pull pieces out of the date.
   // If the date came from the node, it is already an instance Date,
   // but if it came from the filename we need to create from a string.
-  const dateTime = date && date instanceof Date ?
-    DateTime.fromJSDate(date) :
-    DateTime.fromISO(date);
+  let dateTime;
+
+  if (date) {
+    dateTime = date instanceof Date ?
+      DateTime.fromJSDate(date) :
+      DateTime.fromISO(date);
+  }
 
   // Generate the placeholder values that we'll use to create the node's permalink.
   const placeholders = getPermalinkPlaceholders({

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-collections",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Creates Gatsby pages from flat folders of Markdown files, with support for pagination and customizable permalinks",
   "main": "index.js",
   "engines": {
