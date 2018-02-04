@@ -42,7 +42,7 @@ export default async function onCreateNode({
   // Create a Luxon date object so we can easily pull pieces out of the date.
   // If the date came from the node, it is already an instance Date,
   // but if it came from the filename we need to create from a string.
-  const dateTime = date instanceof Date ?
+  const dateTime = date && date instanceof Date ?
     DateTime.fromJSDate(date) :
     DateTime.fromISO(date);
 
@@ -66,5 +66,5 @@ export default async function onCreateNode({
   createNodeField({ node, name: 'slug', value: permalink });
 
   // Add the date as a field on the node. We will use this for sorting entries.
-  createNodeField({ node, name: 'date', value: dateTime.toISO() });
+  createNodeField({ node, name: 'date', value: dateTime && dateTime.toISO() });
 }

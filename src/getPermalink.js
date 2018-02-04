@@ -37,8 +37,9 @@ export default function createPermalink({
   });
 
   // In case any of our placeholder values were empty strings, we'll replace any
-  // instances of `//` with `/` to ensure we don't end up with a malformed URL.
-  url = url.replace('//', '/');
+  // occurrences of two or more slashes with one, to ensure we don't end up with
+  // a malformed URL.
+  url = url.replace(/\/\/+/g, '/');
 
   // Return the URL, ensuring that there is a leading and trailing slash
   return ensureSlash(url);

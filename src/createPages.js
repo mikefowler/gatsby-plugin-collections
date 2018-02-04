@@ -21,6 +21,7 @@ export default async function createPages({
       paginate,
       folder,
       template,
+      query,
     } = collection;
 
     const glob = `${path.resolve(ROOT_PATH, folder)}/**`;
@@ -51,6 +52,7 @@ export default async function createPages({
                 title
                 template
               }
+              ${query || ''}
             }
           }
         }
