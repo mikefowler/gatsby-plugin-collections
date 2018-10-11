@@ -1,6 +1,6 @@
 import getDateAndSlug, {
-  DATE_FILENAME_MATCHER,
   DATELESS_FILENAME_MATCHER,
+  DATE_FILENAME_MATCHER,
 } from '../getDateAndSlug';
 
 describe('getDateAndSlug', () => {

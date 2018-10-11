@@ -1,11 +1,4 @@
 {
-  "extends": "airbnb",
-  "overrides": [
-    {
-      "files": ["*.test.{js,jsx}", "**/__tests__/**"],
-      "env": {
-        "jest": true
-      }
-    }
-  ]
+  "extends": ["prettier", "plugin:import/errors", "plugin:import/warnings"],
+  "parser": "babel-eslint"
 }

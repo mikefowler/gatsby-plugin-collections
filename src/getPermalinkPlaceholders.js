@@ -1,17 +1,13 @@
 // Create placeholder values that are used to generate a node's permalink.
 // Each key in this object corresponds to a possible permalink template value, .e.g.
 // `/:year/:month/:day/:title`.
-export default function getPermalinkPlaceholders({
-  categories,
-  date,
-  slug,
-} = {}) {
+export default function getPermalinkPlaceholders({ categories, date, slug } = {}) {
   return {
     // Joins the categories, as defined in the frontmatter, with '/', making
     // each string lowercase. We use a Set to eliminate duplicates in
     // the provided array. The Set constructor also allows `null` or
     // `undefined`, so we don't need an additional check.
-    categories: [...new Set(categories)].map(c => c.toLowerCase()).join('/'),
+    categories: [...new Set(categories)].map((c) => c.toLowerCase()).join('/'),
 
     // Title and slug are effectively the same, and are derived either from
     // the filename or frontmatter

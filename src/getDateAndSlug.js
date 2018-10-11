@@ -1,4 +1,4 @@
-import slugify from 'slug';
+import slugify from 'slugify';
 
 // These two matchers are used to parse the node's filename and
 // determine whether it contains both a date and title, or just a title.
@@ -16,9 +16,9 @@ export default function deriveDateAndSlug(filename, overrides = {}) {
 
   // If the filename includes a date, we want to use that date instead
   if (matchWithDate) {
-    ([, date, slug] = matchWithDate);
+    [, date, slug] = matchWithDate;
   } else if (matchWithoutDate) {
-    ([, slug] = matchWithoutDate);
+    [, slug] = matchWithoutDate;
   }
 
   // If the date is set in the YAML frontmatter, we will prefer it to

@@ -8,11 +8,7 @@ import ensureSlash from './ensureSlash';
 // plugin), and uses a string replace with RegExp and callback to look at each placeholder
 // in the template, replacing it with the corresponding values in the placeholder object
 // defined above.
-export default function createPermalink({
-  template,
-  placeholders,
-  permalink,
-} = {}) {
+export default function createPermalink({ template, placeholders, permalink } = {}) {
   if (!permalink && !template) {
     throw new Error('getPermalink requires either permalink or template');
   }
@@ -24,10 +20,12 @@ export default function createPermalink({
   let url = template.replace(/:([a-z_]+)/g, (_, match) => {
     const trailingUnderscore = match.endsWith('_');
     const possibleKeys = trailingUnderscore ? [match, match.slice(0, -1)] : [match];
-    const key = possibleKeys.find(k => Object.prototype.hasOwnProperty.call(placeholders, k));
+    const key = possibleKeys.find((k) => Object.prototype.hasOwnProperty.call(placeholders, k));
 
     if (!key) {
-      const err = `The URL template doesn't have ${possibleKeys.map(m => `“${m}”`).join(' or ')} keys!`;
+      const err = `The URL template doesn't have ${possibleKeys
+        .map((m) => `“${m}”`)
+        .join(' or ')} keys!`;
       throw new Error(err);
     }
 

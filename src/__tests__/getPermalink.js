@@ -33,10 +33,11 @@ describe('getPermalink', () => {
   });
 
   it('throws an error for missing placeholders', () => {
-    const result = () => getPermalink({
-      template: '/:year/:foo',
-      placeholders,
-    });
+    const result = () =>
+      getPermalink({
+        template: '/:year/:foo',
+        placeholders,
+      });
     expect(result).toThrow();
   });
 

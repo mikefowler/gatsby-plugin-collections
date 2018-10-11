@@ -1,18 +1,13 @@
-import { DateTime } from 'luxon';
 import path from 'path';
 
-import getPermalink from './getPermalink';
-import getDateAndSlug from './getDateAndSlug';
-import getPermalinkPlaceholders from './getPermalinkPlaceholders';
-import {
-  PERMALINK_PRESETS,
-  ROOT_PATH,
-} from './constants';
+import { DateTime } from 'luxon';
 
-export default async function onCreateNode({
-  node,
-  boundActionCreators,
-}, { collections }) {
+import { PERMALINK_PRESETS, ROOT_PATH } from './constants';
+import getDateAndSlug from './getDateAndSlug';
+import getPermalink from './getPermalink';
+import getPermalinkPlaceholders from './getPermalinkPlaceholders';
+
+export default async function onCreateNode({ node, boundActionCreators }, { collections }) {
   const { createNodeField } = boundActionCreators;
 
   // This plugin only handles files processed by Remark
@@ -45,9 +40,7 @@ export default async function onCreateNode({
   let dateTime;
 
   if (date) {
-    dateTime = date instanceof Date ?
-      DateTime.fromJSDate(date) :
-      DateTime.fromISO(date);
+    dateTime = date instanceof Date ? DateTime.fromJSDate(date) : DateTime.fromISO(date);
   }
 
   // Generate the placeholder values that we'll use to create the node's permalink.
