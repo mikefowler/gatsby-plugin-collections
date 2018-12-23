@@ -6,6 +6,7 @@ import getPermalinkPlaceholders from '../getPermalinkPlaceholders';
 const date = DateTime.fromISO('2017-05-05T11:12:13');
 
 const placeholders = getPermalinkPlaceholders({
+  collection: 'posts',
   categories: ['one', 'two', 'three'],
   slug: 'my-post-slug',
   date,
@@ -13,6 +14,7 @@ const placeholders = getPermalinkPlaceholders({
 
 describe('getPermalink', () => {
   it('requires either permalink or template arguments', () => {
+    // @ts-ignore
     expect(() => getPermalink()).toThrowError('getPermalink requires either permalink or template');
   });
 

@@ -1,4 +1,0 @@
-{
-  "extends": ["prettier", "plugin:import/errors", "plugin:import/warnings"],
-  "parser": "babel-eslint"
-}
