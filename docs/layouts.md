@@ -1,6 +1,6 @@
 # Layouts
 
-**[[Quickstart](./quickstart) | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | Layouts]**
+[Quickstart](./quickstart) | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | Layouts
 
 Layouts are React components used to render an item in your collection (or a page of items, in the case of pagination).
 

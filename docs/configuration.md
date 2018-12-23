@@ -1,6 +1,6 @@
 # Configuration
 
-**[[Quickstart](./quickstart) | Configuration | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | [Layouts](./layouts.md)]**
+[Quickstart](./quickstart) | Configuration | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | [Layouts](./layouts.md)
 
 The following plugin options are available:
 

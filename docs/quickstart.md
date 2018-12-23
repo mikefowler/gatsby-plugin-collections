@@ -1,6 +1,6 @@
 # Quickstart
 
-**[Quickstart | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | [Layouts](./layouts.md)]**
+Quickstart | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | [Layouts](./layouts.md)
 
 ## Install dependencies
 

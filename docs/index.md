@@ -1,6 +1,6 @@
 # Documentation
 
-**[[Quickstart](./quickstart) | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | [Layouts](./layouts.md)]**
+[Quickstart](./quickstart) | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | [Pagination](./pagination.md) | [Layouts](./layouts.md)
 
 Gatsby Collections creates pages for collections of Markdown files, with support for pagination, customizable permalinks, and configurable layouts.
 

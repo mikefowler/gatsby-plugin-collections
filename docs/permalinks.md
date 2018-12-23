@@ -1,6 +1,6 @@
 # Permalinks
 
-**[[Quickstart](./quickstart) | [Configuration](./configuration.md) | Permalinks | [Pagination](./pagination.md) | [Layouts](./layouts.md)]**
+[Quickstart](./quickstart) | [Configuration](./configuration.md) | Permalinks | [Pagination](./pagination.md) | [Layouts](./layouts.md)
 
 Permalinks are template strings that define how an item's URL is constructed. They contain [placeholder values](#permalink-template-variables) (i.e. `:collection`) that are replaced by actual values during the Gatsby build process. The default permalink template is the [`pretty` preset](#presets).
 
