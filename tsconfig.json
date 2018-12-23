@@ -1,0 +1,20 @@
+{
+  "include": ["src/**/*", "declarations.d.ts"],
+  "exclude": ["**/__tests__/**/*"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "lib": ["esnext.asynciterable", "es2015", "es2016", "es2017"],
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "types": ["node", "jest"],
+    "typeRoots": ["./node_modules/@types"]
+  }
+}

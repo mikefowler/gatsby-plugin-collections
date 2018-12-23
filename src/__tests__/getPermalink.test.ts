@@ -6,6 +6,7 @@ import getPermalinkPlaceholders from '../getPermalinkPlaceholders';
 const date = DateTime.fromISO('2017-05-05T11:12:13');
 
 const placeholders = getPermalinkPlaceholders({
+  collection: 'posts',
   categories: ['one', 'two', 'three'],
   slug: 'my-post-slug',
   date,
@@ -13,16 +14,8 @@ const placeholders = getPermalinkPlaceholders({
 
 describe('getPermalink', () => {
   it('requires either permalink or template arguments', () => {
-    expect(() => getPermalink()).toThrowError('getPermalink requires either permalink or template');
-  });
-
-  it('uses a predefined permalink, if defined', () => {
-    const permalink = '/foo/bar/hello-world/';
-    expect(getPermalink({ permalink })).toEqual(permalink);
-  });
-
-  it('ensures slashes on predefined permalinks', () => {
-    expect(getPermalink({ permalink: 'foo/bar/foo' })).toEqual('/foo/bar/foo/');
+    // @ts-ignore
+    expect(() => getPermalink()).toThrowError('getPermalink requires a template');
   });
 
   it('accepts templates without placeholders', () => {
@@ -33,10 +26,11 @@ describe('getPermalink', () => {
   });
 
   it('throws an error for missing placeholders', () => {
-    const result = () => getPermalink({
-      template: '/:year/:foo',
-      placeholders,
-    });
+    const result = () =>
+      getPermalink({
+        template: '/:year/:foo',
+        placeholders,
+      });
     expect(result).toThrow();
   });
 

@@ -1,4 +1,4 @@
-export default function ensureSlash(str) {
+export default function ensureSlash(str: string) {
   if (typeof str !== 'string') {
     throw new Error('ensureSlash must receive a valid string');
   }
