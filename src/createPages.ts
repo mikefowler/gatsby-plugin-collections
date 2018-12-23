@@ -174,7 +174,7 @@ const createPages: GatsbyCreatePages<GatsbyCollectionOptions> = async (
             path: currentPath,
             component: getLayout(paginationLayoutName, { layoutPath }),
             context: {
-              ids: items.map(({ node }) => node.id),
+              slugs: items.map(({ node }) => node.fields.slug),
               currentPageNumber,
               numberOfPages,
               nextPage,

@@ -18,9 +18,9 @@ export const LAYOUTS_PATH = path.resolve(ROOT_PATH, 'src/layouts');
  * are found below, in the definition of the placeholders object.
  */
 export const PERMALINK_PRESETS: { [presetName: string]: string } = {
-  pretty: '/:categories/:year/:month/:year/:title',
-  ordinal: '/:categories/:year/:y_day/:title',
-  none: '/:categories/:title',
+  pretty: '/:collection/:year/:month/:year/:title',
+  ordinal: '/:collection/:year/:y_day/:title',
+  none: '/:collection/:title',
 };
 
 /** By default, paginated collections will render this number of items per page */

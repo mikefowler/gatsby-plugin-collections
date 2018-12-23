@@ -1,6 +1,7 @@
 import { GatsbyOnCreateNode } from 'gatsby';
 import { DateTime } from 'luxon';
 import path from 'path';
+import slugify from 'slugify';
 
 import { DEFAULT_PERMALINK_TEMPLATE, PERMALINK_PRESETS, ROOT_PATH } from './constants';
 import getCollections from './getCollections';
@@ -66,7 +67,7 @@ const onCreateNode: GatsbyOnCreateNode<GatsbyCollectionOptions> = async (
     categories,
     date: dateTime,
     slug,
-    collection: collection.name,
+    collection: slugify(collection.name),
   });
 
   // Create the URL that this node will use as its slug
