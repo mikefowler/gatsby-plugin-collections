@@ -77,18 +77,36 @@ export interface GatsbyCollectionContent {
   };
 }
 
-export interface GatsbyCollectionLayoutContext {
+export interface GatsbyCollectionLayoutContextProp {
+  /** The slug of the item to render */
   slug: string;
 }
 
-export interface GatsbyCollectionPaginationLayoutContext {
-  ids: string[];
+export interface GatsbyCollectionPaginationContextProp {
+  /** The slugs of the items to render on this page */
+  slugs: string[];
+
+  /** The current page number in the paginated collection */
   currentPageNumber: number;
+
+  /** The total number of pages in the paginated collection */
   numberOfPages: number;
-  nextPage: string;
-  nextPageNumber: number;
+
+  /** A path to the next page of results, unless this is the last page */
+  nextPage?: string;
+
+  /** The number of the next page, unless this is the last page */
+  nextPageNumber?: number;
+
+  /** Is there a next page of results? */
   hasNextPage: boolean;
+
+  /** A path to the previous page of results, unless this is the first page */
   previousPage: string;
+
+  /** The number of the previous page, unless this is the first page */
   previousPageNumber: number;
+
+  /** Is there a previous page of results? */
   hasPreviousPage: boolean;
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- [fix] improve exported TypeScript interfaces
+
 ## 1.0.1
 
 - [fix] include `index.d.ts` in the published NPM package
