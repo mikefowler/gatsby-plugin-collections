@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-collections",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gatsby Collections creates pages from collections of Markdown files, with support for pagination, customizable permalinks, and configurable layouts.",
   "main": "index.js",
   "engines": {
