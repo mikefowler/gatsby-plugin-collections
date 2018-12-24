@@ -36,12 +36,8 @@ export interface GatsbyCollection {
   /** Should this collection be paginated? */
   paginate?: GatsbyCollectionPaginationOptions;
 
-  /**
-   * If provided, this string will be interpolated into the GraphQL
-   * query used to fetch a collection's content. Use this for providing
-   * custom fields to your collection layouts
-   */
-  query?: string;
+  /** Should we create pages for this collection's items? */
+  output?: boolean;
 }
 
 export interface GatsbyCollectionPaginationOptions {

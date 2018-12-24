@@ -14,12 +14,13 @@ The following plugin options are available:
 
 ## Collection
 
-| property          | type   | required? | default | description                                                                                                       |
-| ----------------- | ------ | --------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| name              | string | yes       |         | the name of the collection                                                                                        |
-| path              | string | yes       |         | the path to your collection's source files, relative to the root of your project                                  |
-| permalink         | string | no        |         | the permalink template for this collection                                                                        |
-| template          | string | no        |         | a path to the React component each collection item should use to render                                           |
-| paginate          | object | no        |         | defines pagination options. If an object is provided, it will be assumed that you want your collection paginated. |
-| paginate.perPage  | number | no        | 10      | the number of items to be displayed on each paginated page                                                        |
-| paginate.template | string | yes       |         | a path to the React component that will be used to render the collection's pagination                             |
+| property          | type    | required? | default | description                                                                                                       |
+| ----------------- | ------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| name              | string  | yes       |         | the name of the collection                                                                                        |
+| path              | string  | yes       |         | the path to your collection's source files, relative to the root of your project                                  |
+| permalink         | string  | no        |         | the permalink template for this collection                                                                        |
+| template          | string  | no        |         | a path to the React component each collection item should use to render                                           |
+| output            | boolean | no        | true    | if set to false, a collection's nodes will be enhanced with fields, but no pages will be created                  |
+| paginate          | object  | no        |         | defines pagination options. If an object is provided, it will be assumed that you want your collection paginated. |
+| paginate.perPage  | number  | no        | 10      | the number of items to be displayed on each paginated page                                                        |
+| paginate.template | string  | yes       |         | a path to the React component that will be used to render the collection's pagination                             |

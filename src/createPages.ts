@@ -23,7 +23,13 @@ const createPages: GatsbyCreatePages<GatsbyCollectionOptions> = async (
   // content in each collection's source directory
   return Promise.all(
     collections.map(async (collection) => {
-      const { paginate, path: collectionPath, query, limit = 1000 } = collection;
+      const { paginate, path: collectionPath, output = true, limit = 1000 } = collection;
+
+      // If the collection has specified `output: false`, then we
+      // won't create pages for it
+      if (!output) {
+        return;
+      }
 
       // We'll recursively look for all *.md and *.markdown files in the collection's path
       const glob = `${path.resolve(ROOT_PATH, collectionPath)}/{**/,}*.{md,markdown}`;
