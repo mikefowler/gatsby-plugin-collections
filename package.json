@@ -34,6 +34,7 @@
   "files": [
     "lib",
     "index.js",
+    "index.d.ts",
     "gatsby-node.js",
     "README.md",
     "LICENSE",
