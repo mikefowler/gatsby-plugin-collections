@@ -18,7 +18,7 @@ export const LAYOUTS_PATH = path.resolve(ROOT_PATH, 'src/layouts');
  * are found below, in the definition of the placeholders object.
  */
 export const PERMALINK_PRESETS: { [presetName: string]: string } = {
-  pretty: '/:collection/:year/:month/:year/:title',
+  pretty: '/:collection/:year/:month/:day/:title',
   ordinal: '/:collection/:year/:y_day/:title',
   none: '/:collection/:title',
 };

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- [fix] Fixes a bug in the "pretty" permalink preset, where `:year` was duplicated by accident
+
 ## 1.1.0
 
 - [new] Added an `output` option to the collection configuration. Setting it to `false` will enhance a collection's nodes with fields, but will not create pages for them. This is useful for when you want to render an entire collection on one page, and individual item's don't need permalinks.
