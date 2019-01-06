@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.2
 
 - [fix] Fixes a bug where having no available frontmatter fields results in a GraphQL query error in `createPages`
 
