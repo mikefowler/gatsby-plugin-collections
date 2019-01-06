@@ -98,8 +98,6 @@ const createPages: GatsbyCreatePages<GatsbyCollectionOptions> = async (
         }
       `;
 
-      console.log(contentQuery);
-
       let content: GatsbyCollectionContent;
 
       try {
