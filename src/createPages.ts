@@ -56,6 +56,19 @@ const createPages: GatsbyCreatePages<GatsbyCollectionOptions> = async (
         sortField = 'frontmatter___title';
       }
 
+      /** A string that holds the frontmatter part of our content query */
+      let frontmatterQuery = '';
+
+      // If, and only if, there are frontmatter fields to query by, do we add
+      // add `frontmatter { ... }` to the GraphQL query.
+      if (!!frontmatterFields.length) {
+        frontmatterQuery = `
+          frontmatter {
+            ${frontmatterFields.join('\n')}
+          }
+        `;
+      }
+
       const contentQuery = `
         {
           allMarkdownRemark(
@@ -78,14 +91,14 @@ const createPages: GatsbyCreatePages<GatsbyCollectionOptions> = async (
                 fields {
                   slug
                 }
-                frontmatter {
-                  ${frontmatterFields.includes('layout') ? 'layout' : ''}
-                }
+                ${frontmatterQuery}
               }
             }
           }
         }
       `;
+
+      console.log(contentQuery);
 
       let content: GatsbyCollectionContent;
 

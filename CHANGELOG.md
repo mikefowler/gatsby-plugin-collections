@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- [fix] Fixes a bug where having no available frontmatter fields results in a GraphQL query error in `createPages`
+
 ## 1.1.1
 
 - [fix] Fixes a bug in the "pretty" permalink preset, where `:year` was duplicated by accident
