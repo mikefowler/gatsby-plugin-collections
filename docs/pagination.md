@@ -1,6 +1,6 @@
 # Pagination
 
-[Quickstart](./quickstart) | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | Pagination | [Layouts](./layouts.md)
+[Quickstart](./quickstart.md) | [Configuration](./configuration.md) | [Permalinks](./permalinks.md) | Pagination | [Layouts](./layouts.md)
 
 Support for paginated collections is built in, and easy to configure. Update your collection object with a `paginate` key, specifying [the layout to use for pagination](./layouts.md#pagination-layouts) and, optionally, the number of items to display per page:
 
