@@ -72,10 +72,7 @@ const createPages: GatsbyCreatePages<GatsbyCollectionOptions> = async (
       const contentQuery = `
         {
           allMarkdownRemark(
-            sort: {
-              fields: [${sortField}]
-              order: DESC
-            }
+            sort: {fields: {date: DESC}}
             filter: {
               fields: {
                 collection: {
